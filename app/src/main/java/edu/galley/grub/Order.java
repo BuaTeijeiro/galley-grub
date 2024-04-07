@@ -1,6 +1,8 @@
 package edu.galley.grub;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class Order implements Comanda {
     private Double total;
@@ -28,6 +30,23 @@ public class Order implements Comanda {
             .append("\n");
         }
         return display.toString();
+    }
+
+    public List<Product> itemList(){
+        return this.products;
+    }
+
+    public Double getTotal(){
+        return this.total;
+    }
+
+    private Double computeTotal(){
+        Optional<Double> sum = this.itemList().stream().map(a -> a.price()).reduce((subtotal, element) -> subtotal + element);
+        return sum.isPresent()? sum.get() : 0;
+    }
+
+    public void updateTotal(){
+        this.total = this.computeTotal();
     }
     
 }
