@@ -88,6 +88,46 @@ public class App {
          order.addItem("Seafoam Soda", 1.00);
  
          order.display();
+
+         
+        /**
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        Ticket receipt = new Receipt(order);
+        receipt.total();
+        receipt.print();
+
+        /**
+         * Eugene H. Krabs quiere obtener un margen
+         * de beneficio extra y decide cargar
+         * por los extras.
+         * 
+         * Modifica el tipo Item para incluir los extras.
+         * 
+         * Refactoriza el metodo toString() de Item
+         * para mostrar el ingrediente extra.
+         * 
+         * NO ACTUALICES EL PRECIO DEL ITEM
+         * con el cargo extra 
+         * pues eso lo haremos con otro componente. 
+         */
+
+         System.out.print("\n\t --- GALLEY GRUB ---  \n");
+
+         patty = new Item("Krabby Patty", 1.25, "cheese");
+         display(patty);
+         bits = new Item("Coral Bits", 1.00, "medium");
+         display(bits);
+         rings = new Item("Kelp Rings", 1.50, "sauce");
+         display(rings);
+         loaf = new Item("Golden Loaf", 2.00, "sauce");
+         display(loaf);
+         soda = new Item("Seafoam Soda", 1.00, "large");
+         display(soda);
+     
  
     }
 
@@ -95,5 +135,5 @@ public class App {
         System.out.print("\t" + item.toString() + "\n");
     }
 
-     
+    
 }

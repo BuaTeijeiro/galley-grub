@@ -32,4 +32,12 @@ public class RetailPrice {
         return RetailPrice.price;
     }
 
+    public static Double getPrice(String product){
+        return RetailPrice.contains(product) ? RetailPrice.getPrices().get(product) : 0;
+    }
+
+    public static boolean contains(String product){
+        return RetailPrice.getPrices().containsKey(product);
+    }
+
 }
