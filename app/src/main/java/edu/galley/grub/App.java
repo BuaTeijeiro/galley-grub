@@ -25,5 +25,37 @@ public class App {
         // formatea la salida de cada entrada del diccionario como prefieras
         System.out.print("\n\t --- PRICES ---  \n");
         RetailPrice.display();
+                /**
+         * Crea los items del menu 
+         * y printa sus datos.
+         * 
+         * Krabby Patty
+         * Coral Bits
+         * Kelp Rings
+         * Golden Loaf
+         * Seafoam Soda
+         * 
+         * Incluye los metodos sobrescritos
+         * equals y hascode para comparar objetos
+         * de tipo Item.
+         */
+
+         System.out.print("\n\t --- GALLEY GRUB ---  \n");
+        
+         Product patty = new Item("Krabby Patty", 1.25);
+         display(patty);
+         Product bits = new Item("Coral Bits", 1.00);
+         display(bits);
+         Product rings = new Item("Kelp Rings", 1.50);
+         display(rings);
+         Product loaf = new Item("Golden Loaf", 2.00);
+         display(loaf);
+         Product soda = new Item("Seafoam Soda", 1.00);
+         display(soda);
+ 
+    }
+
+    public static void display(Product item) {
+        System.out.print("\t" + item.toString() + "\n");
     }
 }
