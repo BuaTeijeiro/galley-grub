@@ -16,6 +16,11 @@ public class Order implements Comanda {
     public void addItem(String name, Double price){
         products.add(new Item(name,price));
     }
+    
+    @Override
+    public void addItem(String name, Double price, String extra){
+        products.add(new Item(name, price, extra));
+    }
 
     @Override
     public void display(){
