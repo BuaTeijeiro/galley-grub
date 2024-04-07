@@ -4,11 +4,21 @@
 package edu.galley.grub;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        /**
+         * Crea un diccionario con los precios
+         * de los extras.
+         *  
+         *  Los precios de los extras son estos:
+         *  - cheese +0.25
+         *  - sauce +0.50
+         *  - medium +0.25
+         *  - large +0.50
+         * 
+         * Lee los precios de los items en la imagen 
+         * del menu proporcionada.
+         */
+
+         RetailPrice.init_prices();
     }
 }
