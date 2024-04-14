@@ -48,4 +48,15 @@ public class Item implements Product {
         }
         return display.toString();
     }
+
+    @Override
+    public boolean equals(Object otherItem){
+
+        return otherItem instanceof Item ? this.name().equals(((Item)otherItem).name()) && this.extra().equals(((Item)otherItem).extra()) : false;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.name().hashCode() + this.extra().hashCode();
+    }
 }
