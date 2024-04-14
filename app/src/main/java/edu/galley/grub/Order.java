@@ -14,12 +14,12 @@ public class Order implements Comanda {
 
     @Override
     public void addItem(String name, Double price){
-        products.add(new Item(name,price));
+        products.add(ItemFactory.getItem(name, price));
     }
     
     @Override
     public void addItem(String name, Double price, String extra){
-        products.add(new Item(name, price, extra));
+        products.add(ItemFactory.getItem(name, price, extra));
     }
 
     @Override
