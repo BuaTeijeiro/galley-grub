@@ -4,6 +4,9 @@
 package edu.galley.grub;
 
 public class App {
+    public static void display(Product item) {
+        System.out.print("\t" + item.toString() + "\n");
+    }
     public static void main(String[] args) {
         /**
          * Crea un diccionario con los precios
@@ -149,12 +152,9 @@ public class App {
         // el precio de los extras en la salida por consola.
         order.display();
      
- 
+        Ticket newReceipt = new Receipt(order);
+        newReceipt.total();
+        newReceipt.print();
+        
     }
-
-    public static void display(Product item) {
-        System.out.print("\t" + item.toString() + "\n");
-    }
-
-    
 }

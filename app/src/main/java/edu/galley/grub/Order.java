@@ -46,7 +46,7 @@ public class Order implements Comanda {
     }
 
     private Double computeTotal(){
-        Optional<Double> sum = this.itemList().stream().map(a -> a.price()).reduce((subtotal, element) -> subtotal + element);
+        Optional<Double> sum = this.itemList().stream().map(a -> a.priceWithExtra()).reduce((subtotal, element) -> subtotal + element);
         return sum.isPresent()? sum.get() : 0;
     }
 

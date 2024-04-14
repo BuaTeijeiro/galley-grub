@@ -26,6 +26,10 @@ public class Item implements Product {
         return price;
     }
 
+    public Double priceWithExtra(){
+        return price() + RetailPrice.getPrice(extra());
+    }
+
     @Override
     public String extra() {
         return extra;

@@ -8,4 +8,6 @@ public interface Product {
 
     String extra();
 
+    Double priceWithExtra();
+
 }
